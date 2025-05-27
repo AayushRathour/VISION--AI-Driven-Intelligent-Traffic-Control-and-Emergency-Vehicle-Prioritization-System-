@@ -1,0 +1,473 @@
+<!--{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+  <title>VISION</title>
+</head>
+<body>
+  <div class="landing">
+    <h1>VISION</h1>
+    <p>Vehicle Identification and Surveillance for Intelligent Observation of Networks</p>
+    <button id="startBtn">Start Monitoring</button>
+    <div class="options">
+      <button>Yes</button>
+      <button>No</button>
+    </div>
+    <ul class="benefits">
+      <li>Emergency Vehicle Priority (Ambulance, Police, Fire Brigade)</li>
+      <li>AI-driven Dynamic Signal Timing</li>
+    </ul>
+  </div>
+  <script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vision - Smart Traffic Management</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        .pulse-animation {
+            animation: pulse 2s infinite;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .traffic-light {
+            width: 80px;
+            height: 200px;
+            border-radius: 40px;
+        }
+        .light {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            margin: 10px auto;
+            opacity: 0.3;
+        }
+        .active {
+            opacity: 1;
+            box-shadow: 0 0 20px 5px currentColor;
+        }
+    </style>
+</head>
+<body class="font-sans bg-gray-50">
+    <!-- Header/Navigation -->
+    <header class="gradient-bg text-white shadow-lg">
+        <div class="container mx-auto px-4 py-6">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-2">
+                    <i class="fas fa-traffic-light text-3xl"></i>
+                    <h1 class="text-2xl font-bold">Vision</h1>
+                </div>
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#features" class="hover:text-blue-200 transition">Features</a>
+                    <a href="#how-it-works" class="hover:text-blue-200 transition">How It Works</a>
+                    <a href="#benefits" class="hover:text-blue-200 transition">Benefits</a>
+                </nav>
+                <button class="md:hidden text-2xl">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="gradient-bg text-white py-20">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-10 md:mb-0">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">Revolutionizing Traffic Management with AI</h2>
+                <p class="text-xl mb-8">Smart, adaptive traffic control that prioritizes emergency vehicles and optimizes flow for everyone.</p>
+                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                    <button id="startBtn" class="bg-white text-blue-800 px-8 py-3 rounded-full font-bold hover:bg-blue-100 transition duration-300 pulse-animation">
+                        Get Started <i class="fas fa-arrow-right ml-2"></i>
+                    </button>
+                    <button class="border-2 border-white px-8 py-3 rounded-full font-bold hover:bg-white hover:text-blue-800 transition duration-300">
+                        Learn More
+                    </button>
+                </div>
+            </div>
+            <div class="md:w-1/2 flex justify-center">
+                <div class="relative">
+                    <div class="traffic-light bg-gray-900 relative">
+                        <div id="redLight" class="light bg-red-500"></div>
+                        <div id="yellowLight" class="light bg-yellow-400"></div>
+                        <div id="greenLight" class="light bg-green-500"></div>
+                    </div>
+                    <div class="absolute -bottom-8 -right-8 bg-white p-4 rounded-lg shadow-xl">
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-3">
+                                <i class="fas fa-ambulance text-blue-800 text-xl"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-gray-500">Priority detected</p>
+                                <p class="font-bold text-gray-800">Emergency vehicle</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-4">Key Features</h2>
+            <p class="text-gray-600 text-center max-w-2xl mx-auto mb-12">Vision combines cutting-edge AI with real-time data to create smarter traffic systems</p>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="feature-card bg-gray-50 p-8 rounded-xl transition duration-300 shadow-md">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-ambulance text-blue-800 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Emergency Priority</h3>
+                    <p class="text-gray-600">Automatically detects and prioritizes ambulances, police cars, and fire trucks to ensure they reach their destinations faster.</p>
+                </div>
+                
+                <div class="feature-card bg-gray-50 p-8 rounded-xl transition duration-300 shadow-md">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-brain text-green-800 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">AI-Powered Optimization</h3>
+                    <p class="text-gray-600">Dynamically adjusts traffic light timing based on real-time vehicle counts to reduce unnecessary waiting times.</p>
+                </div>
+                
+                <div class="feature-card bg-gray-50 p-8 rounded-xl transition duration-300 shadow-md">
+                    <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-chart-line text-purple-800 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Data Analytics</h3>
+                    <p class="text-gray-600">Provides comprehensive traffic pattern analysis to help cities plan better infrastructure and routing.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-4">How Vision Works</h2>
+            <p class="text-gray-600 text-center max-w-2xl mx-auto mb-12">Our intelligent system makes real-time decisions to optimize traffic flow</p>
+            
+            <div class="flex flex-col md:flex-row items-center mb-16">
+                <div class="md:w-1/2 mb-8 md:mb-0 md:pr-8">
+                    <h3 class="text-2xl font-bold mb-4">Emergency Vehicle Detection</h3>
+                    <p class="text-gray-600 mb-6">Our advanced sensors and AI algorithms instantly recognize approaching emergency vehicles. When detected, the system:</p>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Immediately turns lights green in their path</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Coordinates with adjacent intersections to maintain priority</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Provides visual and audible alerts to other drivers</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="md:w-1/2 bg-white p-8 rounded-xl shadow-md">
+                    <div class="flex justify-center mb-4">
+                        <div class="relative">
+                            <img src="https://via.placeholder.com/400x250" alt="Emergency vehicle detection" class="rounded-lg">
+                            <div class="absolute -top-3 -right-3 bg-red-500 text-white rounded-full w-10 h-10 flex items-center justify-center">
+                                <i class="fas fa-ambulance"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-center text-gray-600">Real-time emergency vehicle detection and response</p>
+                </div>
+            </div>
+            
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-8 md:mb-0 order-2 md:order-1">
+                    <div class="bg-white p-8 rounded-xl shadow-md">
+                        <div class="flex justify-center mb-4">
+                            <div class="relative">
+                                <img src="https://via.placeholder.com/400x250" alt="Traffic flow optimization" class="rounded-lg">
+                                <div class="absolute -top-3 -right-3 bg-blue-500 text-white rounded-full w-10 h-10 flex items-center justify-center">
+                                    <i class="fas fa-car"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-center text-gray-600">Dynamic traffic light timing based on vehicle count</p>
+                    </div>
+                </div>
+                <div class="md:w-1/2 md:pl-8 order-1 md:order-2">
+                    <h3 class="text-2xl font-bold mb-4">Adaptive Traffic Flow</h3>
+                    <p class="text-gray-600 mb-6">Our system continuously monitors vehicle density at each intersection and makes intelligent adjustments:</p>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Reduces green light duration when fewer than 25 vehicles are detected</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Extends green light timing during peak hours or special events</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Coordinates with neighboring intersections for optimal flow</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section id="benefits" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-4">Benefits of Vision</h2>
+            <p class="text-gray-600 text-center max-w-2xl mx-auto mb-12">Transforming urban mobility with intelligent traffic solutions</p>
+            
+            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div class="bg-blue-50 p-8 rounded-xl border-l-4 border-blue-500">
+                    <h3 class="text-xl font-bold mb-3 text-blue-800">Faster Emergency Response</h3>
+                    <p class="text-gray-700">By prioritizing emergency vehicles, Vision helps save crucial minutes that can mean the difference between life and death.</p>
+                </div>
+                
+                <div class="bg-green-50 p-8 rounded-xl border-l-4 border-green-500">
+                    <h3 class="text-xl font-bold mb-3 text-green-800">Reduced Traffic Congestion</h3>
+                    <p class="text-gray-700">Our adaptive timing system reduces unnecessary stops and starts, leading to smoother traffic flow and shorter commute times.</p>
+                </div>
+                
+                <div class="bg-purple-50 p-8 rounded-xl border-l-4 border-purple-500">
+                    <h3 class="text-xl font-bold mb-3 text-purple-800">Lower Emissions</h3>
+                    <p class="text-gray-700">Less idling at red lights means reduced fuel consumption and lower carbon emissions for a greener city.</p>
+                </div>
+                
+                <div class="bg-yellow-50 p-8 rounded-xl border-l-4 border-yellow-500">
+                    <h3 class="text-xl font-bold mb-3 text-yellow-800">Cost Effective</h3>
+                    <p class="text-gray-700">Vision works with existing infrastructure, requiring minimal hardware upgrades while delivering maximum benefits.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 gradient-bg text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-6">Ready to Transform Your City's Traffic?</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">Join the revolution in smart traffic management today.</p>
+            
+            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                <button id="yesBtn" class="bg-white text-blue-800 px-8 py-3 rounded-full font-bold hover:bg-blue-100 transition duration-300">
+                    Yes, I'm interested <i class="fas fa-thumbs-up ml-2"></i>
+                </button>
+                <button id="noBtn" class="border-2 border-white px-8 py-3 rounded-full font-bold hover:bg-white hover:text-blue-800 transition duration-300">
+                    No, thanks <i class="fas fa-thumbs-down ml-2"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal -->
+    <div id="modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50">
+        <div class="bg-white rounded-xl p-8 max-w-md w-full mx-4">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-2xl font-bold">Get Started with Vision</h3>
+                <button id="closeModal" class="text-gray-500 hover:text-gray-700">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <p class="text-gray-600 mb-6">Please select your role to continue:</p>
+            <div class="space-y-4">
+                <a href="monitor.html"><button class="w-full bg-blue-100 hover:bg-blue-200 text-blue-800 py-3 px-4 rounded-lg flex items-center justify-between transition">
+                    <span>City Official</span>
+                    <i class="fas fa-city"></i>
+                </button>
+              </a>
+                <a href="monitor.html"><button class="w-full bg-green-100 hover:bg-green-200 text-green-800 py-3 px-4 rounded-lg flex items-center justify-between transition">
+                    <span>Traffic Engineer</span>
+                    <i class="fas fa-traffic-light"></i>
+                </button>
+              </a>
+                <a href="monitor.html"><button class="w-full bg-purple-100 hover:bg-purple-200 text-purple-800 py-3 px-4 rounded-lg flex items-center justify-between transition">
+                    <span>General Public</span>
+                    <i class="fas fa-user"></i>
+                </button>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Response Modal -->
+    <div id="responseModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50">
+        <div class="bg-white rounded-xl p-8 max-w-md w-full mx-4 text-center">
+            <div class="mb-6">
+                <div id="responseIcon" class="text-5xl mb-4">
+                    <!-- Icon will be inserted here by JS -->
+                </div>
+                <h3 id="responseTitle" class="text-2xl font-bold mb-2"></h3>
+                <p id="responseMessage" class="text-gray-600"></p>
+            </div>
+            <button id="closeResponseModal" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-full transition">
+                Close
+            </button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4 flex items-center">
+                        <i class="fas fa-traffic-light mr-2"></i> Vision
+                    </h3>
+                    <p class="text-gray-400">Smart traffic management for smarter cities.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Home</a></li>
+                        <li><a href="#features" class="text-gray-400 hover:text-white transition">Features</a></li>
+                        <li><a href="#how-it-works" class="text-gray-400 hover:text-white transition">How It Works</a></li>
+                        <li><a href="#benefits" class="text-gray-400 hover:text-white transition">Benefits</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Contact</h4>
+                    <ul class="space-y-2">
+                        <li class="flex items-center text-gray-400">
+                            <i class="fas fa-envelope mr-2"></i> info@visiontraffic.com
+                        </li>
+                        <li class="flex items-center text-gray-400">
+                            <i class="fas fa-phone mr-2"></i> (123) 456-7890
+                        </li>
+                        <li class="flex items-center text-gray-400">
+                            <i class="fas fa-map-marker-alt mr-2"></i> 123 Smart City Blvd
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Follow Us</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-blue-600 transition">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-blue-400 transition">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-pink-600 transition">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-red-600 transition">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2023 Vision Traffic Management. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Traffic light animation
+        function animateTrafficLight() {
+            const lights = ['redLight', 'yellowLight', 'greenLight'];
+            let current = 0;
+            
+            setInterval(() => {
+                // Turn off all lights
+                lights.forEach(light => {
+                    document.getElementById(light).classList.remove('active');
+                });
+                
+                // Turn on current light
+                document.getElementById(lights[current]).classList.add('active');
+                
+                // Move to next light
+                current = (current + 1) % lights.length;
+                
+                // Special case: show yellow between red and green
+                if (current === 2) {
+                    setTimeout(() => {
+                        document.getElementById(lights[1]).classList.add('active');
+                        document.getElementById(lights[2]).classList.remove('active');
+                    }, 1000);
+                    setTimeout(() => {
+                        document.getElementById(lights[1]).classList.remove('active');
+                        document.getElementById(lights[2]).classList.add('active');
+                    }, 2000);
+                }
+                
+            }, 3000); // Change every 3 seconds
+        }
+        
+        // Modal functionality
+        const modal = document.getElementById('modal');
+        const responseModal = document.getElementById('responseModal');
+        const startBtn = document.getElementById('startBtn');
+        const yesBtn = document.getElementById('yesBtn');
+        const noBtn = document.getElementById('noBtn');
+        const closeModal = document.getElementById('closeModal');
+        const closeResponseModal = document.getElementById('closeResponseModal');
+        
+        startBtn.addEventListener('click', () => {
+            modal.classList.remove('hidden');
+        });
+        
+        yesBtn.addEventListener('click', () => {
+            showResponse(true);
+        });
+        
+        noBtn.addEventListener('click', () => {
+            showResponse(false);
+        });
+        
+        closeModal.addEventListener('click', () => {
+            modal.classList.add('hidden');
+        });
+        
+        closeResponseModal.addEventListener('click', () => {
+            responseModal.classList.add('hidden');
+        });
+        
+        function showResponse(isPositive) {
+            const icon = document.getElementById('responseIcon');
+            const title = document.getElementById('responseTitle');
+            const message = document.getElementById('responseMessage');
+            
+            if (isPositive) {
+                icon.innerHTML = '<i class="fas fa-thumbs-up text-green-500"></i>';
+                title.textContent = 'Great Choice!';
+                message.textContent = 'Thank you for your interest in Vision. Our team will contact you shortly to discuss how we can improve traffic in your area.';
+            } else {
+                icon.innerHTML = '<i class="fas fa-thumbs-down text-red-500"></i>';
+                title.textContent = 'We Understand';
+                message.textContent = 'We appreciate your time. If you change your mind, we\'ll be here to help with your traffic management needs.';
+            }
+            
+            modal.classList.add('hidden');
+            responseModal.classList.remove('hidden');
+        }
+        
+        // Initialize animations
+        document.addEventListener('DOMContentLoaded', () => {
+            animateTrafficLight();
+        });
+    </script>
+</body>
+</html>
